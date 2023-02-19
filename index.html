@@ -140,6 +140,10 @@ body {
         @media (max-width: 768px) {
           .partitioned {
             flex-direction: column;
+            padding-top: 5%;
+            padding-top: 5%;
+           padding-left: 5%;
+           padding-right: 5%;
           }
           .partitioned > div:first-child {
             margin-right: 0;
@@ -189,6 +193,50 @@ body {
 			transform: scale(1);
 			opacity: 0.2;
 		}
+
+
+
+
+    .slideshow {
+  position: relative;
+}
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slideshow img.active {
+  opacity: 1;
+}
+.slideshow .buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.slideshow .buttons button {
+  position: absolute;
+  background: transparent;
+  color: transparent;
+  border: none;
+  font-size: 48px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.slideshow .buttons button:hover {
+  opacity: 1;
+}
+.slideshow .buttons .prev {
+  left: 10px;
+}
+.slideshow .buttons .next {
+  right: 10px;
+}
+
   </style>
 </head>
 <body>
@@ -217,13 +265,29 @@ body {
 
 <div class="partitioned">
   <div>
-          <img src="images/Awards Categories_-3.jpg" alt="">
+    <div class="slideshow">
+      <img src="images/image1.jpg">
+      <img src="images/image2.jpg" alt="">
+      <img src="images/image3.jpg" alt="">
+      <img src="images/image4.jpg" alt="">
+      <img src="images/image5.jpg" alt="">
+      <div class="buttons">
+        <button class="prev">&#8249;</button>
+        <button class="next">&#8250;</button>
+      </div>
+    </div>
+    
       </div>
   <div>
           <div class="card">
               <div class="card-body">
                   <h5 class="card-title">The Kiutso Awards - Recognizing Exceptional Talent and Achievement</h5>
-                  <p class="card-text">The Kiutso Awards is a prestigious annual program that honors exceptional individuals and companies who have achieved remarkable success in their field. From groundbreaking innovations to unparalleled contributions, the program celebrates the best and brightest across various areas of expertise. Join us in recognizing and applauding the outstanding talent and achievement of our winners, and be inspired by their stories of success.</p>
+                  <p class="card-text">The Kiutso Awards is a prestigious annual program that
+                     honors exceptional individuals  among students of kampala international university who have achieved remarkable success in
+                      their field . From groundbreaking innovations to unparalleled contributions,
+                       the program celebrates the best and brightest across various areas of expertise. 
+                       Join us in recognizing and applauding the outstanding talent and
+                        achievement of our winners, and be inspired by their stories of success.</p>
               </div>
           </div>
           <br><br>
@@ -245,6 +309,40 @@ body {
     }
   });
 });
+
+
+
+
+const slideshow = document.querySelector('.slideshow');
+const images = slideshow.querySelectorAll('img');
+let currentImageIndex = 0;
+
+images[currentImageIndex].classList.add('active');
+
+const prevButton = slideshow.querySelector('.prev');
+prevButton.addEventListener('click', showPreviousImage);
+
+const nextButton = slideshow.querySelector('.next');
+nextButton.addEventListener('click', showNextImage);
+
+function showPreviousImage() {
+  images[currentImageIndex].classList.remove('active');
+  currentImageIndex--;
+  if (currentImageIndex < 0) {
+    currentImageIndex = images.length - 1;
+  }
+  images[currentImageIndex].classList.add('active');
+}
+
+function showNextImage() {
+  images[currentImageIndex].classList.remove('active');
+  currentImageIndex++;
+  if (currentImageIndex >= images.length) {
+    currentImageIndex = 0;
+  }
+  images[currentImageIndex].classList.add('active');
+}
+
 
 </script>
 </html>
