@@ -87,12 +87,108 @@
 body {
     min-height: 110vh;
     background-color: #ffffff;
-    background-image: linear-gradient(135deg, #4ca1af 0%, #c4e0e5 100%);
+    background-image: linear-gradient(135deg, #4CAF50 0%, #ffffff 100%);
 }
 .navvy{
   width: fit-content;
 }
+@media (max-width: 767.98px) {
+  .navbar .navbar-brand,
+  .navbar .nav-link {
+    font-size: 3rem;
+  }
+}
 
+
+
+
+.partitioned {
+			display: flex;
+			flex-direction: row;
+      width: fit-content;
+      padding-top: 5%;
+      padding-left: 5%;
+      padding-right: 5%;
+		}
+		.partitioned > div {
+			flex: 0 0 45%;
+            width: 90%;
+		}
+		.partitioned > div:first-child {
+			margin-right: 10%;
+		}
+        img{
+            width: 100%;
+            height: min-content;
+            border-radius: 25%;
+        }
+        .card {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 1.1rem;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+            margin-top: 1rem;
+        }
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2176bd;
+        }
+        .card-text {
+            color: #4d4d4d;
+        }
+
+        @media (max-width: 768px) {
+          .partitioned {
+            flex-direction: column;
+          }
+          .partitioned > div:first-child {
+            margin-right: 0;
+            margin-bottom: 1rem;
+          }
+        }
+
+
+
+        
+		.button-container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 10px;
+			position: relative;
+			overflow: hidden;
+      border-radius: 25%;
+		}
+
+		.button:before {
+			content: "";
+			position: absolute;
+			top: -50%;
+			left: -50%;
+			width: 200%;
+			height: 200%;
+			background-color: #4CAF50;
+			transform: scale(0);
+			opacity: 0;
+			transition: transform 0.5s, opacity 1s;
+		}
+
+		.button:hover:before {
+			transform: scale(1);
+			opacity: 0.2;
+		}
   </style>
 </head>
 <body>
@@ -119,6 +215,24 @@ body {
 
 
 
+<div class="partitioned">
+  <div>
+          <img src="images/Awards Categories_-3.jpg" alt="">
+      </div>
+  <div>
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">The Kiutso Awards - Recognizing Exceptional Talent and Achievement</h5>
+                  <p class="card-text">The Kiutso Awards is a prestigious annual program that honors exceptional individuals and companies who have achieved remarkable success in their field. From groundbreaking innovations to unparalleled contributions, the program celebrates the best and brightest across various areas of expertise. Join us in recognizing and applauding the outstanding talent and achievement of our winners, and be inspired by their stories of success.</p>
+              </div>
+          </div>
+          <br><br>
+          <div class="button-container">
+            <button class="button">VOTE</button>
+            <button class="button">REGISTER</button>
+          </div>
+      </div>
+</div>
 
 </body>
 <script>
