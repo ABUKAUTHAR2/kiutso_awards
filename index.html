@@ -1,0 +1,119 @@
+<style>
+    /* Navbar styling */
+    .navbar {
+      background-color: #4CAF50;
+      color: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+    
+    /* Logo styling */
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .navbar-logo img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    
+    /* Navbar items styling */
+    .navbar-items {
+      display: flex;
+      align-items: center;
+    }
+    
+    .navbar-item {
+      margin-right: 20px;
+    }
+    
+    /* Media query for small devices */
+    @media only screen and (max-width: 600px) {
+      /* Navbar items are hidden by default */
+      .navbar-items {
+        display: none;
+      }
+      
+      /* Add a menu icon for small devices */
+      .navbar-toggle {
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      
+      /* Show the collapsed menu when clicked */
+      .navbar-toggle:hover + .navbar-items {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Style the collapsed menu items */
+      .navbar-items a {
+        color: #4CAF50;
+        margin: 10px 0;
+        text-align: center;
+      }
+    }
+    
+    /* Search icon styling */
+    .search-icon {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    
+    .search-icon img {
+      height: 20px;
+      width: 20px;
+    }
+    
+    /* Additional navbar items */
+    .navbar-item:hover {
+      color: #4CAF50;
+    }
+    
+    .navbar-item:not(:last-child) {
+      border-right: 2px solid white;
+    }
+    
+    .navbar-item:first-child {
+      margin-right: auto;
+    }
+  </style>
+  
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="your-image.jpg" alt="Logo">
+      <h3>Your Company Name</h3>
+    </div>
+    <div class="navbar-items">
+      <a href="#" class="navbar-item">Home</a>
+      <a href="#" class="navbar-item">About</a>
+      <a href="#" class="navbar-item">Services</a>
+      <a href="#" class="navbar-item">Products</a>
+      <a href="#" class="navbar-item">Blog</a>
+      <a href="#" class="navbar-item">Contact</a>
+    </div>
+    <div class="search-icon">
+      <img src="search-icon.png" alt="Search">
+    </div>
+    <div class="navbar-toggle">&#9776;</div>
+  </nav>
+  

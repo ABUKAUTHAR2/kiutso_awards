@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KIUTSO Awards - Login</title>
+	<style>
+		body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+form label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+form p {
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.g-signin2 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.g-signin2 > div {
+    width: 200px !important;
+    height: 40px !important;
+}
+
+	</style>
+</head>
+<body>
+	<header>
+		<img src="kiutso_logo.png" alt="KIUTSO Logo">
+		<h1>KIUTSO Awards</h1>
+	</header>
+	<main>
+		<h2>Login</h2>
+		<form method="post" action="login.php">
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required><br><br>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required><br><br>
+			<button type="submit" id="submit-btn">Login</button>
+			<p>Or login with your Google account:</p>
+			<div class="g-signin2" data-onsuccess="onSignIn"></div>
+		</form>
+	</main>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script>
+		function onSignIn(googleUser) {
+			var profile = googleUser.getBasicProfile();
+			var id_token = googleUser.getAuthResponse().id_token;
+			document.getElementById("email").value = profile.getEmail();
+			document.getElementById("password").value = id_token;
+			document.getElementById("submit-btn").click();
+		}
+	</script>
+</body>
+</html>

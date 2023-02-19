@@ -1,0 +1,70 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	background-color: #4CAF50;
+	color: white;
+}
+
+header img {
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+}
+
+main {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.nominees {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.nominee {
+	flex-basis: calc(50% - 10px);
+	margin-bottom: 20px;
+	background-color: white;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+
+.nominee img {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.nominee h2 {
+	font-size: 24px;
+	margin: 0 0 10px;
+}
+
+.nominee p {
+	font-size: 16px;
+	margin: 0 0 10px;
+}
+
+.vote-button {
+	display: block;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.vote-button:hover {
+	background-color: #3e8e41;
+}
