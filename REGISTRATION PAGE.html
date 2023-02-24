@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>KIUTSO Awards Registration</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-container {
+      width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #picture {
+      width: 100%;
+    }
+
+    .btn {
+      width: 100%;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>KIUTSO Awards Registration</h2>
+    <form action="newreg.php" method="post" enctype="multipart/form-data">
+      <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
+      <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" required>
+      <input type="text" name="contact_details" id="contact_details" class="form-control" placeholder="Contact Details" required>
+      <input type="file" name="picture" id="picture" class="form-control" required>
+      <input type="submit" value="Submit" name="submit" class="btn">
+    </form>
+  </div>
+  <script>
+
+function validateForm() {
+  var name = document.forms["registrationForm"]["fullName"].value;
+  var email = document.forms["registrationForm"]["email"].value;
+  var phone = document.forms["registrationForm"]["phone"].value;
+  var picture = document.forms["registrationForm"]["picture"].value;
+
+  if (name == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  if (email == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  if (!emailRegex.test(email)) {
+    alert("Invalid email address");
+    return false;
+  }
+  if (phone == "") {
+    alert("Phone must be filled out");
+    return false;
+  }
+  var phoneRegex = /^\d{10}$/;
+  if (!phoneRegex.test(phone)) {
+    alert("Invalid phone number (must be 10 digits)");
+    return false;
+  }
+  if ( picture == "") {
+    alert("Picture must be uploaded");
+    return false;
+  }
+  if (picture.size > 10485760) {
+    alert("Picture size exceeds maximum limit of 10MB");
+    return false;
+  }
+
+  return true;
+}
+
+  </script>
+</body>
+</html>
