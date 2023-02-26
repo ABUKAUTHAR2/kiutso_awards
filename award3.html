@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="icon" href="images/image7.jpg" type="image/jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <style>
+        .form_container {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 50px 40px 20px 40px;
+  background-color: #ffffff;
+  box-shadow: 0px 106px 42px rgba(0, 0, 0, 0.01),
+    0px 59px 36px rgba(0, 0, 0, 0.05), 0px 26px 26px rgba(0, 0, 0, 0.09),
+    0px 7px 15px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 11px;
+  font-family: "Inter", sans-serif;
+}
+.sign-in_btn {
+  width: 100%;
+  height: 40px;
+  border: 0;
+  background: #4CAF50;
+  border-radius: 7px;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+
+.separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  color: #8B8E98;
+}
+
+.separator .line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  background-color: #e8e8e8;
+}
+
+.note {
+  font-size: 0.75rem;
+  color: #8B8E98;
+  text-decoration: underline;
+}
+@media (min-width: 867px) {
+    .form_container {
+        margin: auto;
+        width: 50%;
+    }
+    
+}
+@media (max-width: 767px) {
+    .form_container {
+        width: 75%;
+    }
+    .navbar-nav {
+    flex-direction: column;
+  }
+  .navbar-nav .nav-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+    
+  }
+  nav{
+    margin-right: 15%;
+  }
+}
+
+body {
+    background-color: #ffffff;
+    background-image: linear-gradient(135deg, #4CAF50 0%, #ffffff 100%);
+    height: fit-content;
+    width:100%;
+}
+    </style>
+     
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light" >
+    <a class="navbar-brand" href="#">KIUTSO AWARDS 2023</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item active"><a href="index.html"  class="nav-link text-uppercase font-weight-bold" style="color: black;">Home <span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"><a href="award3.html" class="nav-link text-uppercase font-weight-bold" style="color: black;">Awards</a></li>
+        <li class="nav-item"><a href="#" onclick="myFunction()" class="nav-link text-uppercase font-weight-bold" style="color: black;">Vote</a></li>
+        <li class="nav-item"><a href="https://kiut.ac.tz/" class="nav-link text-uppercase font-weight-bold" style="color: black;">University</a></li>
+        <li class="nav-item"><a    onclick="openPopup()" class="nav-link text-uppercase font-weight-bold" style="color: black;">Contact</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+    <form class="form_container">
+  <button title="Sign In" type="submit" class="sign-in_btn" onclick="mrandmrs()">
+    <span>Miss/Mr KIUT</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+  
+  <button title="Sign In" type="submit" class="sign-in_btn">
+    <span>Sign In</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+  
+  
+  <button title="Sign In" type="submit" class="sign-in_btn">
+    <span>Sign In</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+  
+  
+  <button title="Sign In" type="submit" class="sign-in_btn">
+    <span>Sign In</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+  
+  
+  <button title="Sign In" type="submit" class="sign-in_btn">
+    <span>Sign In</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+  
+  
+  
+  <p class="note">Terms of use &amp; Conditions</p>
+</form>
+</body>
+<script>
+  function myFunction() {
+  alert("Voting for the KIUTSO Awards has not yet started. Please wait for further announcements from the Minister of Sports and Entertainment of KIUTSO.");
+}
+function mrandmrs (){
+  alert("This award recognizes the most outstanding and well-rounded female and male students at KIUT. The winners of this award embody the values of leadership, academic excellence, community service, and personal growth.")
+                     ( "They are role models for their peers and have made a significant impact")
+                     ("on the KIUT community through their contributions to student life,")
+                       (" academic achievement, and extracurricular activities. The Miss/Mr KIUT award is the highest honor")
+                   (" that a student at KIUT can receive and represents the very best of the KIUT community")
+}
+</script>
+</html>
