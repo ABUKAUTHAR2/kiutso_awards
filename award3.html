@@ -125,6 +125,61 @@ body {
   line-height: 1.1rem;
   color: #8B8E98
 }
+
+
+
+/* Popup card styles */
+.popup-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        width: 400px;
+        height: 200px;
+        background-color: white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .popup-card img {
+        display: block;
+        margin: 0 auto;
+        max-width: 50%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 50%;
+      }
+
+      .popup-card h2,
+      .popup-card p {
+        text-align: center;
+        margin: 0;
+      }
+
+      .popup-card .contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .popup-card .contact .person {
+        width: 45%;
+        margin: 10px 0;
+      }
+
+      .popup-card button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
     </style>
      
 </head>
@@ -380,6 +435,26 @@ body {
   
   <p class="note">Terms of use &amp; Conditions</p>
 </form>
+
+
+
+
+
+<div id="popup" class="popup-card" style="display: none;">
+  <button onclick="closePopup()" style="color: red;">X</button>
+  <div class="contact">
+    <div class="person">
+      <img src="images/henry katonge.jpg" alt="Person 1" />
+      <h2>John Doe</h2>
+      <p>Phone: 123-456-7890</p>
+    </div>
+    <div class="person">
+      <img src="images/henry katonge.jpg" alt="Person 2" />
+      <h2>Jane Smith</h2>
+      <p>Phone: 987-654-3210</p>
+    </div>
+  </div>
+</div>
 </body>
 <script>
   function myFunction() {alert("Voting for the KIUTSO Awards has not yet started. Please wait for further announcements from the Minister of Sports and Entertainment of KIUTSO.");}
@@ -410,6 +485,13 @@ function bestmale(){alert("Best drawing artist: Recognition for exceptional tale
     function besthairdresser(){lert ("Best hairdresser: Recognition for exceptional skill in hair cutting, styling, and coloring.")}
     function bestofbest(){ alert("Best of best: Recognition for the most outstanding performance among all KIUTSO awards.")}
     
+    function openPopup() {
+        document.getElementById("popup").style.display = "block";
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
 
 </script>
 </html>
