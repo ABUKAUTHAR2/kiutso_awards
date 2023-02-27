@@ -93,10 +93,43 @@ body {
     height: fit-content;
     width:100%;
 }
+.logo_container {
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(248, 248, 248, 0) 50%, #F8F8F888 100%);
+  border: 1px solid #F7F7F8;
+  filter: drop-shadow(0px 0.5px 0.5px #EFEFEF) drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  border-radius: 11px;
+}
+
+.title_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #212121;
+}
+
+.subtitle {
+  font-size: 0.725rem;
+  max-width: 80%;
+  text-align: center;
+  line-height: 1.1rem;
+  color: #8B8E98
+}
     </style>
      
 </head>
 <body>
+
 
   <nav class="navbar navbar-expand-lg navbar-light" >
     <a class="navbar-brand" href="#">KIUTSO AWARDS 2023</a>
@@ -116,6 +149,12 @@ body {
     </div>
   </nav>
     <form class="form_container">
+        <div class="logo_container"> <img src="images/image4.jpg" alt="" style="width: 100%;"></div>
+        <div class="title_container">
+          <p class="title">Click the category to see discriptions</p>
+          <span class="subtitle">Get started to vote, just create an account and enjoy the experience.</span>
+        </div>
+        <br>
   <button title="Sign In" type="submit" class="sign-in_btn" onclick="mrandmrs()">
     <span>Miss/Mr KIUT</span>
   </button>
@@ -126,8 +165,8 @@ body {
     <hr class="line">
   </div>
   
-  <button title="Sign In" type="submit" class="sign-in_btn">
-    <span>Sign In</span>
+  <button  type="submit" class="sign-in_btn" onclick="bestartistmale()">
+    <span>Best male Artist</span>
   </button>
 
   <div class="separator">
@@ -137,8 +176,8 @@ body {
   </div>
   
   
-  <button title="Sign In" type="submit" class="sign-in_btn">
-    <span>Sign In</span>
+  <button  type="submit" class="sign-in_btn" onclick="bestartistfemale()">
+    <span>Best Female Artist</span>
   </button>
 
   <div class="separator">
@@ -147,9 +186,9 @@ body {
     <hr class="line">
   </div>
   
-  
-  <button title="Sign In" type="submit" class="sign-in_btn">
-    <span>Sign In</span>
+
+  <button  type="submit" class="sign-in_btn" onclick="bestcomedian()">
+    <span>Best comedian</span>
   </button>
 
   <div class="separator">
@@ -158,9 +197,28 @@ body {
     <hr class="line">
   </div>
   
-  
-  <button title="Sign In" type="submit" class="sign-in_btn">
-    <span>Sign In</span>
+  <button  type="submit" class="sign-in_btn" onclick="bestfemalemodel()">
+    <span>Best female model</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+  <button  type="submit" class="sign-in_btn" onclick="bestphotographer()">
+    <span>Best Photographer</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+  <button  type="submit" class="sign-in_btn" onclick="besthiphop()">
+    <span>Best Hip-Hope</span>
   </button>
 
   <div class="separator">
@@ -169,21 +227,189 @@ body {
     <hr class="line">
   </div>
   
+  <button  type="submit" class="sign-in_btn" onclick="bestmalestylish()">
+    <span>Best male Stylish</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+  <button  type="submit" class="sign-in_btn" onclick="bestfemalestylish()">
+    <span>Best Female Stylish </span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+  <button  type="submit" class="sign-in_btn" onclick="bestinfluncer()">
+    <span>Best Influencer</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+  <button  type="submit" class="sign-in_btn" onclick="bestmaleactor()">
+    <span>Best Male Actor </span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+  <button  type="submit" class="sign-in_btn" onclick="bestfemaleactor()">
+    <span>Best  Female Actor</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
   
+  <button  type="submit" class="sign-in_btn" onclick="bestdancer()">
+    <span>Best  Dancer</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+  <button  type="submit" class="sign-in_btn" onclick="bestmalepresenter()">
+    <span>Best  Male  Male presenter</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+  <button  type="submit" class="sign-in_btn" onclick="bestfemalepresenter()">
+    <span>Best Female presenter </span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+  <button  type="submit" class="sign-in_btn" onclick="bestnetballer()">
+    <span>Best netballer </span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+
+  <button  type="submit" class="sign-in_btn" onclick="bestfootballer()">
+    <span>Best  Footballer</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+  <button  type="submit" class="sign-in_btn" onclick="bestfemalevollyballer()">
+    <span>Best Female Volleyballer </span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+
+  <button  type="submit" class="sign-in_btn" onclick="berstmalevolleyballer()">
+    <span>Best  Male  Volleyballer</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+  <button  type="submit" class="sign-in_btn" onclick="bestmusicproducer()">
+    <span>Best producer </span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+
+  <button  type="submit" class="sign-in_btn" onclick="besthairdresser()">
+    <span>Best hairdresser </span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+  <button  type="submit" class="sign-in_btn" onclick="bestofbest()">
+    <span>Best Of Best</span>
+  </button>
+
+  <div class="separator">
+    <hr class="line">
+   
+    <hr class="line">
+  </div>
+
+
   
   <p class="note">Terms of use &amp; Conditions</p>
 </form>
 </body>
 <script>
-  function myFunction() {
-  alert("Voting for the KIUTSO Awards has not yet started. Please wait for further announcements from the Minister of Sports and Entertainment of KIUTSO.");
-}
-function mrandmrs (){
-  alert("This award recognizes the most outstanding and well-rounded female and male students at KIUT. The winners of this award embody the values of leadership, academic excellence, community service, and personal growth.")
-                     ( "They are role models for their peers and have made a significant impact")
-                     ("on the KIUT community through their contributions to student life,")
-                       (" academic achievement, and extracurricular activities. The Miss/Mr KIUT award is the highest honor")
-                   (" that a student at KIUT can receive and represents the very best of the KIUT community")
-}
+  function myFunction() {alert("Voting for the KIUTSO Awards has not yet started. Please wait for further announcements from the Minister of Sports and Entertainment of KIUTSO.");}
+function mrandmrs (){alert("Mr and Mrs KIUT - This award recognizes the most outstanding male and female students at KIUT. The winners of this award embody the values of leadership, academic excellence, community service, and personal growth. They are role models for their peers and have made a significant impact on the KIUT community through their contributions to student life, academic achievement, and extracurricular activities. The Mr and Mrs KIUT award is the highest honor that a student at KIUT can receive and represents the very best of the KIUT community.")}
+function bestartistmale (){alert("Best Male Artist - Exceptional artistic ability, inspiring and original work, capturing attention of KIUT community and beyond")}
+function  bestartistfemale(){alert("Best Female Artist - Exceptional artistic ability, inspiring and original work, capturing attention of KIUT community and beyond")}
+function bestcomedian(){alert("Best Comedian - Natural talent for making people laugh, clever and relatable humor, connecting with audience.")}
+function bestfemalemodel(){alert("Best Female Model - Natural grace and poise, captivating and inspiring beauty, showcasing KIUT fashion and beauty to the world")}
+function  bestphotographer(){alert("Best Photographer - Keen eye for detail, stunning and thought-provoking photography, capturing beauty of KIUT and its people.")}
+function besthiphop(){alert("Best Hip Hop - Most talented and original hip hop artist at KIUT, captivating and inspiring music, pushing boundaries and making an impact.")}
+function bestmalestylish(){alert("Best Male Stylish - Exceptional style and fashion sense, inspiring and setting trends, elevating KIUT fashion and style")}
+function  bestfemalestylish(){alert("Best Female Stylish - Exceptional style and fashion sense, inspiring and setting trends, elevating KIUT fashion and style.")}
+function bestinfluncer(){alert("Best Influencer - Inspiring and influential voice, connecting with KIUT community and beyond, promoting positivity and making a difference.")}
+function bestmaleactor(){alert("Best Male Actor - Exceptional acting ability, captivating and inspiring performances, bringing stories and characters to life.")}
+function bestfemaleactor(){alert("Best Female Actor - Exceptional acting ability, captivating and inspiring performances, bringing stories and characters to life")}
+function bestmale(){alert("Best drawing artist: Recognition for exceptional talent in freehand drawing or sketching.")}
+ function bestgraphicdesigner(){alert(" Best graphic designer: Recognition for exceptional talent in designing for digital or print media.")}
+ function bestdancer(){alert(" Best dancers: Recognition for exceptional talent in various dance styles and techniques.")}
+   function bestenterpreneur(){(" Best entrepreneur: Recognition for exceptional skill in creating and growing successful businesses.")}
+  function bestskiutsoleader(){alert  (" Best kiutso leader: Recognition for exceptional leadership in the KIUTSO organization.")}
+    function bestmalepresenter(){alert(" Best male presenter: Recognition for exceptional male presentation skills in media or public speaking.")}
+   function bestfemalepresenter(){alert (" Best female presenter: Recognition for exceptional female presentation skills in media or public speaking.")}
+    function bestnetballer (){lert("Best netball player: Recognition for exceptional skill in playing the sport of netball.")}
+    function bestfootballer(){lert("Best footballer: Recognition for exceptional skill in playing the sport of football.")}
+    function berstmalevolleyballer(){ lert ("Best male volleyballer: Recognition for exceptional skill in playing the sport of volleyball (male).")}
+    function bestfemalevollyballer(){ lert("Best female volleyballer: Recognition for exceptional skill in playing the sport of volleyball (female).")}
+    function bestmusicproducer(){lert ("Best music producer: Recognition for exceptional talent in producing music.")}
+    function besthairdresser(){lert ("Best hairdresser: Recognition for exceptional skill in hair cutting, styling, and coloring.")}
+    function bestofbest(){ alert("Best of best: Recognition for the most outstanding performance among all KIUTSO awards.")}
+    
+
 </script>
 </html>
