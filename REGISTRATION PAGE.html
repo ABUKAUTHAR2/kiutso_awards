@@ -57,6 +57,9 @@
       margin: 50px auto;
       }
     }
+    option{
+      margin-top: 5%;
+    }
   </style>
 </head>
 <body>
@@ -64,6 +67,37 @@
     <h2>KIUTSO Awards Registration</h2>
     <form action="newreg.php" method="post" enctype="multipart/form-data">
       <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
+     <br> <label for="categories">Select a category:</label>
+<select id="categories" name="categories" class="form-control" aria-placeholder="SELECT WHATS YOUR FAVORITE AWARD">
+  <option value="mr-and-mrs-kiut">Mr and Mrs KIUT</option>
+  <option value="best-male-artist">Best Male Artist</option>
+  <option value="best-female-artist">Best Female Artist</option>
+  <option value="best-comedian">Best Comedian</option>
+  <option value="best-female-model">Best Female Model</option>
+  <option value="best-photographer">Best Photographer</option>
+  <option value="best-hiphop">Best Hip Hop</option>
+  <option value="best-male-stylish">Best Male Stylish</option>
+  <option value="best-female-stylish">Best Female Stylish</option>
+  <option value="best-influencer">Best Influencer</option>
+  <option value="best-male-actor">Best Male Actor</option>
+  <option value="best-female-actor">Best Female Actor</option>
+  <option value="best-drawing-artist">Best Drawing Artist</option>
+  <option value="best-graphic-designer">Best Graphic Designer</option>
+  <option value="best-dancers">Best Dancers</option>
+  <option value="best-entrepreneur">Best Entrepreneur</option>
+  <option value="best-kiutso-leader">Best KIUTSO Leader</option>
+  <option value="best-male-presenter">Best Male Presenter</option>
+  <option value="best-female-presenter">Best Female Presenter</option>
+  <option value="best-netball-player">Best Netball Player</option>
+  <option value="best-footballer">Best Footballer</option>
+  <option value="best-male-volleyballer">Best Male Volleyballer</option>
+  <option value="best-female-volleyballer">Best Female Volleyballer</option>
+  <option value="best-music-producer">Best Music Producer</option>
+  <option value="best-hairdresser">Best Hairdresser</option>
+  <option value="best-of-best" checked>Best of Best</option>
+</select>
+<br>
+<br>
       <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" required>
       <input type="text" name="contact_details" id="contact_details" class="form-control" placeholder="Contact Details" required>
       <input type="file" name="picture" id="picture" class="form-control" required>
