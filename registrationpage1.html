@@ -7,7 +7,7 @@
   <title>KIUTSO Awards Registration</title>
   <style>
     body {
-      background-color: white;
+      background-image: linear-gradient(135deg, #4CAF50 0%, #ffffff 100%);
       font-family: Arial, sans-serif;
     }
 
@@ -44,22 +44,69 @@
       padding: 10px;
       border-radius: 5px;
       cursor: pointer;
+      
       border: none;
     }
 
     .btn:hover {
       background-color: #3e8e41;
     }
+    @media (max-width:767px) {
+      .form-container{
+        width:100%;
+      margin: 50px auto;
+      }
+    }
+    option{
+      margin-top: 5%;
+    }
   </style>
 </head>
 <body>
   <div class="form-container">
     <h2>KIUTSO Awards Registration</h2>
-    <form action="newreg.php" method="post" enctype="multipart/form-data">
+    <form action="regiternominee.php" method="post" enctype="multipart/form-data">
       <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
-      <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" required>
+      <input type="text" name="regnumber" id="regnumber" class="form-control" placeholder="student's reg number" required>
       <input type="text" name="contact_details" id="contact_details" class="form-control" placeholder="Contact Details" required>
+      <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" required>
       <input type="file" name="picture" id="picture" class="form-control" required>
+      <input type="text" name="link" id="link" class="form-control" placeholder="Enter your discriptive link" required>
+      <br> 
+      <label for="categories" >Select a category:</label>
+    <select id="categories" name="categories" class="form-control">
+      <option value="mr-and-mrs-kiut">Mr and Mrs KIUT</option>
+      <option value="best-male-artist">Best Male Artist</option>
+      <option value="best-female-artist">Best Female Artist</option>
+      <option value="best-comedian">Best Comedian</option>
+      <option value="best-female-model">Best Female Model</option>
+      <option value="best-photographer">Best Photographer</option>
+      <option value="best-hiphop">Best Hip Hop</option>
+      <option value="best-male-stylish">Best Male Stylish</option>
+      <option value="best-female-stylish">Best Female Stylish</option>
+      <option value="best-influencer">Best Influencer</option>
+      <option value="best-male-actor">Best Male Actor</option>
+      <option value="best-female-actor">Best Female Actor</option>
+      <option value="best-drawing-artist">Best Drawing Artist</option>
+      <option value="best-graphic-designer">Best Graphic Designer</option>
+      <option value="best-dancers">Best Dancers</option>
+      <option value="best-entrepreneur">Best Entrepreneur</option>
+      <option value="best-kiutso-leader">Best KIUTSO Leader</option>
+      <option value="best-male-presenter">Best Male Presenter</option>
+      <option value="best-female-presenter">Best Female Presenter</option>
+      <option value="best-netball-player">Best Netball Player</option>
+      <option value="best-footballer">Best Footballer</option>
+      <option value="best-male-volleyballer">Best Male Volleyballer</option>
+      <option value="best-female-volleyballer">Best Female Volleyballer</option>
+      <option value="best-music-producer">Best Music Producer</option>
+      <option value="best-hairdresser">Best Hairdresser</option>
+      <option value="best-of-best" checked>Best of Best</option>
+    </select>
+<br>
+<br>
+     
+      
+
       <input type="submit" value="Submit" name="submit" class="btn">
     </form>
   </div>
@@ -101,8 +148,10 @@ function validateForm() {
     alert("Picture size exceeds maximum limit of 10MB");
     return false;
   }
+
   return true;
 }
+
   </script>
 </body>
 </html>

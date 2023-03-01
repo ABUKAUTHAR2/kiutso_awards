@@ -172,10 +172,23 @@ body{
     die("Connection failed: " . mysqli_connect_error());
   }
 
-  // Check if the 'id' variable is set in the URL
-  if (isset($_GET['id'])) {
-    // Retrieve the 'id' from the URL
+  // Check if the 'id' and 'categories' variables are set in the URL
+  if (isset($_GET['id']) && isset($_GET['categories'])) {
+    // Retrieve the 'id' and 'categories' from the URL
     $id = $_GET['id'];
+    $categories = $_GET['categories'];
+    
+    // Get the user's MAC address
+    $mac_address = exec('getmac');
+    $mac_address = strtok($mac_address, ' ');
+
+    // Check if the user has already voted for this categories in the last 24 hours
+    $sql = "SELECT * FROM votes WHERE mac_address = '$mac_address' AND categories = '$categories' AND timestamp > DATE_SUB(NOW(), INTERVAL 1 DAY)";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+      echo "Sorry, you have already voted for this categories in the last 24 hours.";
+      exit();
+    }
 
     // Update the vote count for the selected nominee
     $sql = "UPDATE nominees SET votes = votes + 1 WHERE id = $id";
@@ -184,6 +197,17 @@ body{
     // Check if the query was successful
     if (!$result) {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      exit();
+    }
+
+    // Insert a new row into the votes table to record the user's vote for this categories
+    $sql = "INSERT INTO votes (mac_address, categories) VALUES ('$mac_address', '$categories')";
+    $result = mysqli_query($conn, $sql);
+
+    // Check if the query was successful
+    if (!$result) {
+      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      exit();
     }
   }
 
@@ -191,26 +215,27 @@ body{
   $sql = "SELECT * FROM nominees";
   $result = mysqli_query($conn, $sql);
   while ($row = mysqli_fetch_array($result)) {
-
      echo ' <div class="card-client">';
          echo '   <div class="user-picture">';
              echo '<img class="nominee-image" src="data:image/jpeg;base64,'.base64_encode($row['picture']).'"/>'; 
          echo '</div>';
          echo '<p class="name-client">' .$row['name']. '<span>'.$row['votes'].' votes </span></p>';
          echo '<div class="social-media">';
-                echo'<button>';
-                echo '<span class="transition"></span>';
-                echo '<span class="gradient"></span>';
-                echo '<span class="label">vote</span>';
-                echo '</button>';
+                echo'<a href="?id='.$row['id'].'&categories='.$row['categories'].'">';
+                echo '  <button>';
+                echo '    <span class="transition"></span>';
+                echo '    <span class="gradient"></span>';
+                echo '    <span class="label">Vote</span>';
+                echo '  </button>';
+                echo '</a>';
           echo '</div>';
           echo '<br>';
           echo'<div>'.$row['categories']. '</div>';
    echo '</div>';
- 
   }
-    // Close the connection
-    mysqli_close($conn);
-    ?>
+
+  // Close the connection
+  mysqli_close($conn);
+?>
 </body>
 </html>
