@@ -294,17 +294,6 @@ height: fit-content;
 
 
 
-
-/* transition for all text */
-body * {
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-}
-
-body.loaded * {
-    opacity: 1;
-}
-
   </style>
 </head>
 <body>
@@ -360,7 +349,7 @@ body.loaded * {
       <a href="REGISTRATION PAGE.html"><button class="button" >REGISTER</button></a>
     </div>
     
-    <marquee behavior="alternate" direction="left"><h3 class="nextlevel"> "THIS IS THE PHASE <br> WE TOLD YOU AND IT WONT REPEAT" </h3></marquee>
+    <marquee behavior="scroll" direction="left"><h3 class="nextlevel"> "THIS IS THE PHASE <br> WE TOLD YOU AND IT WONT REPEAT" </h3></marquee>
    </div>
    <hr>
    <hr>
@@ -392,6 +381,9 @@ body.loaded * {
    </div>
    <div class="sponsorship place" style="width: 70%; padding-left: 5%;">
     <h3>YOU WANT TO BECOME SPONSOR ?</h3>
+    <img src="images/image2.jpg" alt="">
+    <h4>Contact us today for sponsorship or   deposit now i our  CRDB  bank acoount now </h4>
+    <h3>bank details</h3>
    </div>
    <footer class="footer">
     <div class="footer-social-icons">
@@ -453,11 +445,7 @@ body.loaded * {
           document.getElementById("popup").style.display = "none";
         }
   
-        // add loaded class to body element after page finishes loading
-window.onload = function() {
-    document.body.classList.add('loaded');
-};
-
+        
      </script>
 </body>
 </html>
