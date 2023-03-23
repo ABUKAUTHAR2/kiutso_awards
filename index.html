@@ -18,6 +18,18 @@
     background-color: #ffffff;
     background-image: linear-gradient(135deg, #4CAF50 0%, #ffffff 100%);
 }
+@keyframes slidein {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    body{
+        animation: slidein 1s forwards;
+    }
 .row {  
   display: flex;
   flex-wrap: wrap;
@@ -60,6 +72,9 @@ img{
   .imageplace{
     padding-left: 2%;
   padding-right: 2%;
+  }
+  .formrmrs {
+    flex-direction: column;
   }
   .footer ,footer-social-icons {
     height: 70px;
@@ -239,13 +254,62 @@ li{
         background: none;
         cursor: pointer;
       }
+      .nextlevel{
+        color: #4CAF50;
+        font-weight: bolder;
+        padding-left: 3%;
+        padding-right: 3%;
+        
+      }
+      .headerr{
+        font-weight: bolder;
+        color: #1c0c07;
+      }
 
+
+
+.formrmrs {  
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 3%;
+  padding-right: 3%;
+ 
+}
+.formr{
+  flex: 50%;
+
+height: fit-content;
+ 
+
+  flex-direction: row;
+}
+.formrs{
+  flex: 50%;
+
+  padding: 20px;
+  flex-direction: row;
+ height: auto;
+  flex-direction: row;
+}
+
+
+
+
+/* transition for all text */
+body * {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+body.loaded * {
+    opacity: 1;
+}
 
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light" >
-    <a class="navbar-brand" href="#">KIUTSO AWARDS 2023</a>
+    <a class="navbar-brand" href="#"><h3 class="headerr">KIUTSO AWARDS 2023</h3> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -266,13 +330,13 @@ li{
     <div class="imageplace">
       <div class="slideshow-container">
         <div class="mySlides ">
-          <img src="images/image1.jpg">
+          <img src="images/Kiutso Awards Look And Feel Designs-2.png">
         </div>
         <div class="mySlides ">
-          <img src="images/image2.jpg">
+          <img src="images/image1.png">
         </div>
         <div class="mySlides ">
-          <img src="images/image3.jpg">
+          <img src="images/image1.png">
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -290,50 +354,44 @@ li{
                   achievement of our winners, and be inspired by their stories of success.</p>
       </div>
     </div>
-    <br><br><br><br>
+    <br>
     <div class="button-container">
       <button class="button"  onclick="myFunction()">VOTE</button>
       <a href="REGISTRATION PAGE.html"><button class="button" >REGISTER</button></a>
     </div>
+    
+    <marquee behavior="alternate" direction="left"><h3 class="nextlevel"> "THIS IS THE PHASE <br> WE TOLD YOU AND IT WONT REPEAT" </h3></marquee>
    </div>
    <hr>
-   <script>
-    
-  var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-var i;
-var slides = document.getElementsByClassName("mySlides");
-for (i = 0; i < slides.length; i++) {
-  slides[i].style.display = "none";
-}
-slideIndex++;
-if (slideIndex > slides.length) {
-  slideIndex = 1
-}
-slides[slideIndex - 1].style.display = "block";
-setTimeout(showSlides, 7000); // Change image every 1 second
-}
-
-function plusSlides(n) {
-showSlides(slideIndex += n);
-}
-
-function myFunction() {
-  alert("Voting for the KIUTSO Awards has not yet started. Please wait for further announcements from the Minister of Sports and Entertainment of KIUTSO.");
-}
-
-function openPopup() {
-        document.getElementById("popup").style.display = "block";
-      }
-
-      function closePopup() {
-        document.getElementById("popup").style.display = "none";
-      }
-
-   </script>
    <hr>
+   </div>
+   <br><br>
+   <hr>
+   <div class="formrmrs">
+        <div class="formr">
+          <h1>MR KIUT</h1>
+            <p>The Kiutso Awards is a prestigious annual program that
+              honors exceptional individuals  among students of kampala international university who have achieved remarkable success in
+               their field . From groundbreaking innovations to unparalleled contributions,
+                the program celebrates the best and brightest across various areas of expertise. 
+                Join us in recognizing and applauding the outstanding talent and
+                 achievement of our winners, and be inspired by their stories of success</p>
+                 <div class="button-container">
+                  <a href="REGISTRATION PAGE.html"><button class="button">nominees</button></a>
+                </div>
+        </div>
+        <div class="formrs">
+          <h1>MISS KIUT</h1>
+          <p>The Kiutso Awards is a prestigious annual program that
+            honors exceptional individuals  among students of kampala international university who have achieved remarkable success in
+             their field . From groundbreaking innovations to unparalleled contributions,
+              the program celebrates the best and brightest across various areas of expertise. 
+              Join us in recognizing and applauding the outstanding talent and
+               achievement of our winners, and be inspired by their stories of success</p>
+        </div>
+   </div>
+   <div class="sponsorship place" style="width: 70%; padding-left: 5%;">
+    <h3>YOU WANT TO BECOME SPONSOR ?</h3>
    </div>
    <footer class="footer">
     <div class="footer-social-icons">
@@ -360,6 +418,47 @@ function openPopup() {
       </div>
     </div>
   </div>
+  <script>
+    
+    var slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 70000000000000); // Change image every 1 second
+  }
+  
+  function plusSlides(n) {
+  showSlides(slideIndex += n);
+  }
+  
+  function myFunction() {
+    alert("Voting for the KIUTSO Awards has not yet started. Please wait for further announcements from the Minister of Sports and Entertainment of KIUTSO.");
+  }
+  
+  function openPopup() {
+          document.getElementById("popup").style.display = "block";
+        }
+  
+        function closePopup() {
+          document.getElementById("popup").style.display = "none";
+        }
+  
+        // add loaded class to body element after page finishes loading
+window.onload = function() {
+    document.body.classList.add('loaded');
+};
+
+     </script>
 </body>
 </html>
 </body>
