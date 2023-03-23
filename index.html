@@ -211,13 +211,13 @@ li{
  .popup-card {
 				
 	position: fixed;
-				top: 50%;
+				top: 10%;
 				left: 50%;
 				transform: translate(-50%, -50%);
 				max-width: 100%;
 				width: 400px;
 				height: 300px;
-				background-color: #4CAF50;
+				background-color: #95e498;
 				box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
 				padding: 20px;
 				box-sizing: border-box;
@@ -472,8 +472,8 @@ li{
 				<div class="mySlides ">
 					<img src="images/Kiutso Awards Look And Feel Designs-2.png">
 				</div>
-				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(-1)">&#10095;</a>
+				<a class="prev" onclick="plusSlides(1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
 			</div>
 		</div>
 		<div class="cardplace">
@@ -504,10 +504,14 @@ li{
 	 <div  style="width: 70%; padding-left: 5%; margin-left: 15%;">
 		<h3>YOU WANT TO BECOME SPONSOR ?</h3>
 		<img  class="imageenct" src="images/image2.jpg" alt="">
+		<br>
 		<h4>Contact us today for sponsorship  </h4>
-		<button class="button"  onclick="openPopup()" >CONTACTS</button>
+		<br> 
+		<button class="button"  onclick="openPopup()" >CONTACTS</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="images/kiutso2223.jpeg"><button class="button">KIUTSO</button></a>
+		<br> <br>
 		<h3>BANK DETAILS</h3>
+		<br>
 	 </div>
 
 	 <div class="bankk">
@@ -576,11 +580,11 @@ li{
 							<p class="number">ACC No: 0152 3647 74700</p>
 							<p class="valid_thru">VALID THRU</p>
 							<p class="date">1 2 / 2 4</p>
-							<p class="name">KIUTSO</p>
+							<p class="name">ACC NAME:KIUTSO</p>
 					</div>
 					<div class="flip-card-back">
 							<div class="strip"></div>
-							<div class="mstrip"></div>
+							<div class="mstrip">give your share now </div>
 							<div class="sstrip">
 								<p class="code">***</p>
 							</div>
@@ -601,17 +605,19 @@ li{
 
 
 	<div id="popup" class="popup-card" style="display: none;">
-		<button onclick="closePopup()" style="color: red;">X</button>
+		<button onclick="closePopup()" style="color: rgba(174, 2, 2, 0.817);">X</button>
 		<div class="contact">
 			<div class="person">
 				<img src="images/henry katonge.jpg" alt="Person 1" />
-				<h2>KOMBO MASUD KHATIB</h2>
-				<p>Phone: 123-456-7890</p>
+				<br>
+				<h6>KOMBO MASUD</h6>
+				<p>Phone:+255 719 068 820</p>
 			</div>
 			<div class="person">
 				<img src="images/henry katonge.jpg" alt="Person 2" />
-				<h2>CHARLES NDUGURU</h2>
-				<p>Phone: 987-654-3210</p>
+				<br>
+				<h6>CHARLES NDUGURU</h6>
+				<p>Phone:+255 745 936 524</p>
 			</div>
 		</div>
 	</div>
